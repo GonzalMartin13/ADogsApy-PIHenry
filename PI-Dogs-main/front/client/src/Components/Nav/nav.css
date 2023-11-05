@@ -1,0 +1,28 @@
+
+.nav{
+    align-items: center;
+    border-right: 8px pink double;
+    border-radius: 0%  25% 25% 0%;
+    width:15% ;
+    background-color:rgb(44, 51, 58);
+    color: pink;
+    font-size: large;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+  .link {
+    text-decoration: none;
+    color:pink;
+  }
+
+  .link:hover{
+    color: whitesmoke
+  }
+
+
+  .limpiar{
+    background: none;
+    border: none;
+    color: pink;
+  }

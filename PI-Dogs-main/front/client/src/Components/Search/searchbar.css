@@ -1,0 +1,34 @@
+/* .busqueda{
+    display:flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: baseline;
+    text-align: center;
+    margin: 20px;
+} */
+.busqueda input{
+    border: none;
+    background: none;
+    text-align: center;
+    font-size: medium;
+    margin: 5px 40px;
+}
+.busqueda input::placeholder{
+    color: black;
+    border: none;
+}
+.busqueda input:focus{
+    outline: none;
+    caret-color: pink;
+}
+.busqueda input:focus::placeholder{
+    color: transparent;
+    
+}
+/* .busqueda select{
+    height: 250px;
+    width: 300px;
+    text-align: center;
+    font-size: xx-large;
+    margin: 5px 40px;
+} */

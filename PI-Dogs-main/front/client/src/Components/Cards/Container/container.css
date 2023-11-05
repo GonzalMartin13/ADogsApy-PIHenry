@@ -1,0 +1,26 @@
+/* Estilos para el contenedor de las tarjetas utilizando CSS Grid */
+.card-container {
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px; 
+    
+  }
+
+  .pagination{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+   }
+
+ .botpag{
+  display:flex;
+  justify-content:space-around;
+ }
+
+.boton{
+  width: 20%;
+  height: 30px;
+  border-radius: 0px 50px;
+  font-size: large;
+  margin: 5px;
+}

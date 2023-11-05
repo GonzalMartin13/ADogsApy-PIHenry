@@ -1,0 +1,13 @@
+.formselect{
+    margin-left: 30%;
+    text-align: center;
+    background: none;
+    border: none;
+    font-size: medium;
+}
+.formselect::after{
+    border: none;
+}
+.formselect:focus{
+    border: none;
+}

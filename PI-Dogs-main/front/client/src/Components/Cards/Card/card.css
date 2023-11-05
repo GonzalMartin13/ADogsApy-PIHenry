@@ -1,0 +1,43 @@
+
+.card {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+    border: 5px double whitesmoke;
+    border-radius: 25px;
+    width: 95%;
+    background-color: rgb(44, 51, 58); 
+    color: pink;
+    height: 100%;
+    margin: 2px;
+  }
+  
+  .card img {
+    width: 175px; 
+    max-width: 200px; 
+    height: 300px;
+    margin: 20px  10px;
+    border-radius: 25px;
+    border: pink solid 2px
+  }
+  
+
+  .card h2 {
+    font-size: 1.5rem; 
+    padding-right: 5px;
+  }
+  
+
+  .card p {
+    font-size: 1rem; 
+    margin: 10px 0; 
+    padding-right: 3px;
+  }
+  
+.botonCard{
+  color:pink;
+  width: 80%;
+  font-size: medium;
+  margin: right 8px;;
+}

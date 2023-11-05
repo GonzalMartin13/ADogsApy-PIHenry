@@ -1,0 +1,27 @@
+*{
+  margin: 0;
+  padding: 0%;
+}
+.bodyapp {
+  color: black;
+  width: 100%;
+  min-width: 320px;
+  min-height: 100vh;
+  text-align: center;
+  background-image: url("../src/assets/istockphoto-1402880605-1024x1024.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+}
+
+.bodylogin {
+  width: 1200px;
+  color: black;
+  min-width: 320px;
+  min-height: 100vh;
+  background-image: url("../src/assets/perritus-transformed.png");
+  background-size:cover;
+  background-repeat:no-repeat;
+ 
+}

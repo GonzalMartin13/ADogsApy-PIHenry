@@ -1,0 +1,79 @@
+
+.cuadroPrincipal{
+    border: 5px double pink;
+    border-radius: 20px;
+    padding: 1pc;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color:rgb(44, 51, 58);
+    color: pink;
+    margin-top: 5%;
+    position: absolute;
+    right: 270px ;
+    height: 50%;
+    width: 20%;
+    text-align: center;
+}
+.cuadroPrincipal h2{
+  margin-top: 50px;
+  font-size: x-large;
+}
+.imputs{
+  margin-top: 30px;
+}
+.imputs::placeholder{
+  color: black;
+}
+.cuadroPrincipal input{
+    margin: 10px;
+    text-align: center;
+    height: 60px;
+    width: 250px;
+    border-radius: 10px;  
+    border: 2px solid pink;  
+     
+}
+
+.loginBoton{
+  color: black;
+}
+
+.ov-btn-grow-skew {
+    background: rgb(235, 227, 227);
+    color: pink;
+    font-size: xx-large;
+    -webkit-text-stroke: 1px black;
+    font-weight: bold;
+    border: 2px solid pink;
+    padding: 16px 20px;
+    border-radius: 10px; 
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    display: inline-block;
+    margin-top: 25px;
+    width: max-content;
+  }
+  .ov-btn-grow-skew:hover {
+    color: #fff;/* color de fuente hover */
+    border: 2px double whitesmoke;
+  }
+  .ov-btn-grow-skew::after {
+    content: "";
+    background: pink; /* color de fondo hover */
+    position: absolute;
+    z-index: -1;
+    padding: 16px 20px;
+    display: block;
+    left: -20%;
+    right: -20%;
+    top: 0;
+    bottom: 0;
+    transform: skewX(-45deg) scale(0, 1);
+    transition: all 0.6s ease;
+  }
+  .ov-btn-grow-skew:hover::after {
+    transition: all 0.3s ease-out;
+    transform: skewX(-45deg) scale(1, 1);
+  }

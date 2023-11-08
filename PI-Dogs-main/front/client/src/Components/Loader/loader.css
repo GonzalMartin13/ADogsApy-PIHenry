@@ -1,0 +1,31 @@
+.loader-container {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    height: 100vh; /* Ajusta la altura del contenedor al 100% del viewport */
+  }  
+  .loader {
+    width: 250px;
+    height: 250px;
+    border: 4px solid rgba(0, 0, 0, 0.2);
+    border-top: 4px solid pink; /* Color de la parte superior del loader */
+    border-radius: 50%;
+    animation: spin 1s linear infinite; /* Animación de rotación */
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  .loader::after {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 30px;
+    margin: 8px;
+    border: 4px solid gray;
+    border-top: 4px solid pink; /* Cambia el color de la parte superior */
+    border-radius: 50%;
+    animation: spin 1s linear infinite; /* Misma animación de rotación */
+  }

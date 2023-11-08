@@ -1,28 +1,33 @@
 
 .nav{
     align-items: center;
-    border-right: 8px pink double;
-    border-radius: 0%  25% 25% 0%;
-    width:15% ;
-    background-color:rgb(44, 51, 58);
+    border-bottom: 8px pink double;
+    border-radius: 0%  0% 25% 25%;
+    width:100%;
+    position: relative;
+    height: 40px;
+    background-color: grey;
     color: pink;
+    text-shadow: 5px 5px 5px rgb(0, 0, 0);
     font-size: large;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-around;
+    margin-bottom: 1%;
 }
   .link {
     text-decoration: none;
-    color:pink;
+    color: whitesmoke;
   }
 
   .link:hover{
-    color: whitesmoke
+    color: pink;
   }
 
 
   .limpiar{
     background: none;
     border: none;
-    color: pink;
+    color: whitesmoke;
+    text-shadow: 5px 5px 5px rgb(0, 0, 0);
   }

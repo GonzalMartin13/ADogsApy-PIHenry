@@ -1,33 +1,50 @@
 .create{
-    border: 5px double rgb(71, 70, 70);
+    border: 15px double pink;
     width: 100vh;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    color: rgb(71, 70, 70);
-    background-color: rgba(255, 192, 203, 0.644);
-    padding-bottom: 25px;
+    color: pink;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.986);
+    background-color: rgba(148, 135, 137, 0.829);
     font-size: larger;
-    margin-top: 8%
+    margin: 1% 25%;
 }
 input{
     text-align: center;
+    font-size: large;
 }
 input::placeholder{
     text-align: center;
 }
 .formboton{
     width: 50%;
-    border-radius: 0px 50px;
-    font-size: large;
-    margin: 5px;
+    border-radius: 25px;
+    font-size: larger;
+    margin: 15px;
 }
-.formselect{
-    display:flex;
-    width: 180px;
+.formselect {
+    font-size: larger;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0% 20%;
+    width: 60%;
+  }
+
+  option{
+    color: black;
+    font-size: larger;
     text-align: center;
-}
-.formselect option{
-    margin-right: 250px;
+  }
+
+.tempSeleccionados{
+    width:60%; 
+    background: rgba(128, 128, 128, 0.487);
+    height: auto;
+    padding: 10px;
+    margin: 10px;   
+    border: none;
+    color: pink;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.986)
 }
 

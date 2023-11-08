@@ -13,7 +13,7 @@ const allPerritos = async (raza) => {
             model: Temperament,
         }
         });
-             
+
     const {data} = await axios.get(`https://api.thedogapi.com/v1/breeds?api_key=${API_KEY}`)
 
     let todosLosPerritos = [...pichichosDB, ...data];
@@ -113,10 +113,6 @@ const nuevoPerro = async (name, img, altura, peso, añosdevida, temperament) => 
         } else {
             console.log("Ya estan cargados los temperamentos")
         }
-
-/*     const temperamentoBD = await Temperament.findAll()
-    return temperamentoBD.map((caracter) => caracter.name) */
-    //return temperamentosAPI
  }
  const traerTemps = async() =>{
     const temperamentos = await Temperament.findAll();

@@ -21,8 +21,9 @@ function SearchTemp() {
     <div >
       <select
         onChange={handleSelectChange}
-        className="formselect"
+        className="tempselect"
         > 
+        <option> Busqueda por Temperamento</option>
         {allTemps.map((temp) => (
           <option value={temp.name} key={temp.id}> 
           {temp.name}

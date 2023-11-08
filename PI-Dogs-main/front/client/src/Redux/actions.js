@@ -1,5 +1,5 @@
 
-import { ALL_DOGS, GET_BY_NAME, USER, ORDER_AZ, API, DB, ALL_TEMPERAMENTS, TRAER_TEMPERAMENT,} from "./action-types";
+import { ALL_DOGS, SET_CONTER, GET_BY_NAME, USER, ORDER_AZ, API, DB, ALL_TEMPERAMENTS, TRAER_TEMPERAMENT,} from "./action-types";
 import axios from "axios";
 
 
@@ -10,6 +10,10 @@ export const increment = () => ({
   export const decrement = () => ({
     type: 'DECREMENT',
   });
+
+  export const setConter = () => ({
+    type: SET_CONTER,
+  })
 
   export const setDogs = () => {
     return async (dispatch) => {
@@ -89,7 +93,6 @@ export const increment = () => ({
         try {
           const { data } = await axios.get('http://localhost:3001/dogs/api');
           console.log(data);
-          //const pioltazo = data.map(pilot => driverLimpio(pilot));
           console.log(data)
           dispatch({
             type: API,

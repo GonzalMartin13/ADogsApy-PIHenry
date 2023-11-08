@@ -18,7 +18,6 @@
 //                       `=---='
 //     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 const { temperamentsBD, traerTemps } = require('./Controlers/controladotes.js');
-const { getTemperamentHandler } = require('./Handlers/handlers.js');
 const server = require('./src/app.js');
 const { conn } = require('./src/db.js');
 

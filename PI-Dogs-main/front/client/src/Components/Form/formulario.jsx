@@ -25,12 +25,6 @@ function Formulario() {
   });
 
   const [creacionExitosa, setCreacionExitosa] = useState(false);
-  const [errores, setErrores] = useState({
-    imagen: false,
-    añosdevida: false,
-    peso: false,
-    altura: false,
-  });
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -53,8 +47,6 @@ function Formulario() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-
-    // Verificación de error para máximos menores que mínimos
     if (
       (perro['añosdevida'] !== '' && perro['añosdevida-max'] !== '' && parseInt(perro['añosdevida']) > parseInt(perro['añosdevida-max'])) ||
       (perro['peso'] !== '' && perro['peso-max'] !== '' && parseInt(perro['peso']) > parseInt(perro['peso-max'])) ||
@@ -62,6 +54,9 @@ function Formulario() {
     ) {
       alert("Los máximos no pueden ser menores que los mínimos.");
       return;
+    } else if(!perro.imagen.includes(".jpg") || !perro.imagen.includes(".com/")){
+      alert("Solo es valida una url que contenga una imagen de tipo jpg")
+      return
     }
 
     const formattedPerro = {
@@ -100,7 +95,7 @@ function Formulario() {
       <h2>Perrito nuevo!</h2>
       <form onSubmit={handleSubmit}>
         <div>
-          <label htmlFor="name">Raza</label> <br />
+          <label htmlFor="name">RAZA</label> <br />
           <input
             type="text"
             id="name"
@@ -111,7 +106,7 @@ function Formulario() {
           />
         </div>
         <div>
-          <label htmlFor="imagen">Imagen:</label><br />
+          <label htmlFor="imagen">IMAGEN</label><br />
           <input
             type="text"
             id="imagen"
@@ -119,12 +114,11 @@ function Formulario() {
             value={perro.imagen}
             onChange={handleInputChange}
             required
-            className={errores.imagen ? 'error' : ''}
           />
-          {errores.imagen && <span className="error-message">Ingrese una URL de imagen válida (jpg, gif, png).</span>}
+          
         </div>
         <div>
-          <label htmlFor="añosdevida">Años de vida (mínimo - máximo)</label> <br />
+          <label htmlFor="añosdevida">AÑOS DE VIDA <br/> (mínimo - máximo)</label> <br />
           <input
             type="number"  // Cambio de 'text' a 'number'
             id="añosdevida"
@@ -145,7 +139,7 @@ function Formulario() {
           />
         </div>
         <div>
-          <label htmlFor="peso">Peso (mínimo - máximo)</label><br />
+          <label htmlFor="peso">PESO <br/> (mínimo - máximo)</label><br />
           <input
             type="number"  // Cambio de 'text' a 'number'
             id="peso"
@@ -166,7 +160,7 @@ function Formulario() {
           />
         </div>
         <div>
-          <label htmlFor="altura">Altura (mínimo - máximo)</label><br />
+          <label htmlFor="altura">ALTURA <br/> (mínimo - máximo)</label><br />
           <input
             type="number"  // Cambio de 'text' a 'number'
             id="altura"
@@ -186,8 +180,8 @@ function Formulario() {
             required
           />
         </div>
-        <div>
-          <label htmlFor="temperaments">Temperamentos</label>
+        <div className='formselect'>
+          <label className="temperaments">TEMPERAMENTOS</label>
           <select
             id="temperaments"
             name="temperaments"
@@ -195,16 +189,16 @@ function Formulario() {
             onChange={handleTemperamentsChange}
             multiple
             required
-            className='formselect'
           >
             {allTemps.map((temp) => (
-              <option value={temp.name} key={temp.id}>
+              <option value={temp.name} key={temp.id} className='custom-options'>
                 {temp.name}
               </option>
             ))}
           </select>
         </div>
-        <button className='formboton' type="submit">Crear</button>
+        <div><input className='tempSeleccionados' value={perro.temperaments}></input></div>
+        <button className='formboton ov-btn-grow-skew' type="submit"  >LET´S GO!</button>
       </form>
       {creacionExitosa && <div className="success-message">Perro creado con éxito</div>}
     </div>

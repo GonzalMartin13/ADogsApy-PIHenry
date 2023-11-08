@@ -1,59 +1,54 @@
 
 .cuadroPrincipal{
-    border: 5px double pink;
+    border: 15px double pink;
     border-radius: 20px;
-    padding: 1pc;
     display: flex;
-    align-items: center;
     flex-direction: column;
-    background-color:rgb(44, 51, 58);
+    justify-content: space-around;
+    background-image: url("../../assets/c1942acd2896ee1e374ce4ca0d32ae75.jpg");
     color: pink;
-    margin-top: 5%;
-    position: absolute;
-    right: 270px ;
-    height: 50%;
-    width: 20%;
+    text-shadow: 5px 5px 5px rgb(0, 0, 0);
+    position: relative;
+    width: 35%;
+    height: 450px;
     text-align: center;
+    margin: 10% 55%;
 }
 .cuadroPrincipal h2{
-  margin-top: 50px;
-  font-size: x-large;
-}
-.imputs{
-  margin-top: 30px;
+  font-size: xx-large;
+  -webkit-text-stroke: 1.5px black;
+  background-clip: text;
+  margin-top: 15px;
 }
 .imputs::placeholder{
   color: black;
 }
 .cuadroPrincipal input{
-    margin: 10px;
+    margin: 5px;
     text-align: center;
-    height: 60px;
+    height: 40px;
     width: 250px;
     border-radius: 10px;  
-    border: 2px solid pink;  
+    border: 2px solid black;  
      
 }
-
 .loginBoton{
-  color: black;
+  width: 50%;
 }
-
 .ov-btn-grow-skew {
-    background: rgb(235, 227, 227);
-    color: pink;
-    font-size: xx-large;
+    background: whitesmoke;
+    color: black;
+    font-size: x-large;
     -webkit-text-stroke: 1px black;
     font-weight: bold;
     border: 2px solid pink;
-    padding: 16px 20px;
+    padding: 10px 20px;
     border-radius: 10px; 
     position: relative;
     z-index: 1;
     overflow: hidden;
     display: inline-block;
-    margin-top: 25px;
-    width: max-content;
+    height: 50px;
   }
   .ov-btn-grow-skew:hover {
     color: #fff;/* color de fuente hover */
@@ -61,7 +56,7 @@
   }
   .ov-btn-grow-skew::after {
     content: "";
-    background: pink; /* color de fondo hover */
+    background: black; /* color de fondo hover */
     position: absolute;
     z-index: -1;
     padding: 16px 20px;

@@ -12,8 +12,8 @@ function Nav() {
     const user = useSelector(state => state.usuario)
     return (  
     <nav className="nav">
+        <p>  Bienvenido {user.nombre + " " + user.apellido} al la API-Dogs </p>
         <Link to="/dogs" className="link linkcreate"> Home </Link>
-        <p>  Hola {user.nombre + " " + user.apellido} <br />, vamos a pasear? </p>
         <Link to="/create" className="link linkcreate" > Crear una raza nueva </Link>
         <button onClick={handleLimpiar} className="limpiar">Limpiar Filtros</button>
     </nav>

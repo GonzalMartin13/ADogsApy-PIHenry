@@ -1,43 +1,47 @@
-
 .card {
-    display: flex;
-    flex-direction: row;
-    text-align: center;
-    align-items: center;
-    border: 5px double whitesmoke;
-    border-radius: 25px;
-    width: 95%;
-    background-color: rgb(44, 51, 58); 
-    color: pink;
-    height: 100%;
-    margin: 2px;
-  }
-  
-  .card img {
-    width: 175px; 
-    max-width: 200px; 
-    height: 300px;
-    margin: 20px  10px;
-    border-radius: 25px;
-    border: pink solid 2px
-  }
-  
+  position: relative;
+  display: inline-block;
+  color: black;
+  border-radius: 25px;
+  overflow: hidden;
+  margin: 1px;
+  text-decoration: none;
+}
 
-  .card h2 {
-    font-size: 1.5rem; 
-    padding-right: 5px;
-  }
-  
+.image {
+  width: 300px;
+  max-width: 100%;
+  height: 250px;
+  border-radius: 25px;
+  transition: opacity 0.8s;
+  border: solid pink 3px;
+  opacity: 1; 
+}
 
-  .card p {
-    font-size: 1rem; 
-    margin: 10px 0; 
-    padding-right: 3px;
-  }
-  
-.botonCard{
-  color:pink;
-  width: 80%;
+.card:hover .image {
+  opacity: 0.5;
+}
+
+.card .card-content {
   font-size: medium;
-  margin: right 8px;;
+  height: 210px;
+  opacity: 0; 
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: none;
+  text-align: center;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border-radius: 25px; 
+  background: gray;
+}
+
+.card:hover .card-content {
+  opacity: 1; 
+  color: pink;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.986) ;
+  backdrop-filter: blur(8px); 
 }

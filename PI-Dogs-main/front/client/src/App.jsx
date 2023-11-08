@@ -3,33 +3,46 @@ import Login from "./Components/Login/login";
 import Container from "./Components/Cards/Container/container";
 import DetailCard from "./Components/Cards/Detail/detail";
 import Formulario from "./Components/Form/formulario";
-import Error from "./Components/Error/error";
 import Nav from "./Components/Nav/nav";
+import Loader from "./Components/Loader/loader";
 import './App.css';
 import { useDispatch } from "react-redux";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { setDogs,  } from "./Redux/actions";
 
 function App() {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const location = useLocation();
   const bodyClass = location.pathname === '/' ? 'bodylogin' : 'bodyapp';
 
-  useEffect( () => {
-    dispatch(setDogs());
-  },[dispatch]);
+  const [isLoading, setIsLoading] = useState(true); // Estado para controlar el cargador
+
+  useEffect(() => {
+    dispatch(setDogs())
+      .then(() => {
+        // Cuando los datos se han cargado, cambia isLoading a false
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        // Manejo de errores si es necesario
+        console.error("Error al cargar datos:", error);
+        setIsLoading(false);
+      });
+  }, [dispatch]);
 
   return (
     <div className={bodyClass}>
       {location.pathname !== '/' && <Nav />}
-      <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/dogs" element={<Container />} />
-        <Route path="/dogs/:id" element={<DetailCard />} />
-        <Route path="/create" element={<Formulario />} />
-        <Route path="*" element={<Error />} />
-      </Routes>
-      
+      {isLoading ? ( // Renderiza el cargador si isLoading es true
+        <Loader/>
+      ) : (
+        <Routes>
+          <Route path="/" element={<Login />} />
+          <Route path="/dogs" element={<Container />} />
+          <Route path="/dogs/:id" element={<DetailCard />} />
+          <Route path="/create" element={<Formulario />} />
+        </Routes>
+      )}
     </div>
   );
 }

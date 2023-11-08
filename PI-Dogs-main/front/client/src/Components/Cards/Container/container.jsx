@@ -9,6 +9,7 @@ import {
     traerApi,
     traerDB,
     setDogs,
+    setConter,
   } from "../../../Redux/actions";
 import Searchbar from "../../Search/searchbar";
 import { useEffect } from "react";
@@ -19,6 +20,7 @@ function Container() {
 
     useEffect( () => {
       dispatch(setDogs());
+      dispatch(setConter());
     },[dispatch]);
 
     const itemsPorPagina = 8;
@@ -40,19 +42,23 @@ function Container() {
 
 const handleApi = () => {
   dispatch(traerApi());
+  dispatch(setConter())
 }
 const handleDB = () => {
   dispatch(traerDB())
+  dispatch(setConter())
 }
  const handleAZ = () => {
   const sortedDogs = [...dogs];
   sortedDogs.sort((a, b) => (a.name && b.name ? a.name.localeCompare(b.name) : 0));
   dispatch(ordenarAlfabeticamente(sortedDogs));
+  dispatch(setConter())
 }
 const handleZA = () => {
   const sortedDogs = [...dogs];
   sortedDogs.sort((a, b) => (b.name && a.name ? b.name.localeCompare(a.name) : 0));
   dispatch(ordenarAlfabeticamente(sortedDogs));
+  dispatch(setConter())
 }
 const handlePesados = () => {
   const sortedDogs = [...dogs];
@@ -62,6 +68,7 @@ const handlePesados = () => {
     return weightA - weightB;
   });
   dispatch(ordenarAlfabeticamente(sortedDogs));
+  dispatch(setConter())
 }
 const handleLivianos = () => {
   const sortedDogs = [...dogs];
@@ -71,6 +78,7 @@ const handleLivianos = () => {
     return weightA - weightB;
   });
   dispatch(ordenarAlfabeticamente(sortedDogs));
+  dispatch(setConter())
 }
 
     return ( 
@@ -83,9 +91,9 @@ const handleLivianos = () => {
             ))}
           </div>
         <div className="botpag">
-            <button className="boton" onClick={handleDecrement}> - </button>
+            <button className="boton" onClick={handleDecrement}> Pagina Anterior </button>
             <button className="boton" > {contador} / {maxPages} </button>
-            <button className="boton" onClick={handleIncrement}> + </button>
+            <button className="boton" onClick={handleIncrement}> Pagina Siguiente </button>
         </div>
       <div className="filtros">
         <button onClick={handleApi} className="boton">API </button>

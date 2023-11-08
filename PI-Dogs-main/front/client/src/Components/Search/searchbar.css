@@ -1,11 +1,4 @@
-/* .busqueda{
-    display:flex;
-    flex-direction: row;
-    justify-content: end;
-    align-items: baseline;
-    text-align: center;
-    margin: 20px;
-} */
+
 .busqueda input{
     border: none;
     background: none;
@@ -14,7 +7,8 @@
     margin: 5px 40px;
 }
 .busqueda input::placeholder{
-    color: black;
+    color: pink;
+    text-shadow: 5px 5px 5px rgb(0, 0, 0);
     border: none;
 }
 .busqueda input:focus{
@@ -25,10 +19,3 @@
     color: transparent;
     
 }
-/* .busqueda select{
-    height: 250px;
-    width: 300px;
-    text-align: center;
-    font-size: xx-large;
-    margin: 5px 40px;
-} */

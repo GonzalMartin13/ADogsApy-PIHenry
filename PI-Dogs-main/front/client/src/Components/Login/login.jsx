@@ -25,7 +25,7 @@ function Login() {
     return (
         <>
             <div className="cuadroPrincipal">
-                <h2>El maravilloso mundo <br /> del mejor amigo del hombre.</h2>
+                <h2>EL HERMOSO MUNDO <br /> DEL MEJOR AMIGO DEL HOMBRE</h2>
                 <div className="imputs">
                     <input required type="text"  name="nombre" id="nombre" placeholder="Ingresa tu Nombre" value={user.nombre} onChange={handleInputChange} />
                     <input required type="text"  name="apellido" id="apellido" placeholder="Ingresa tu Apellido" value={user.apellido} onChange={handleInputChange} />

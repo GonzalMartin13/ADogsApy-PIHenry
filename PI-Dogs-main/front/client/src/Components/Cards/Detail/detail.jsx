@@ -17,21 +17,23 @@ function DetailCard() {
 
     console.log(perritoID);
 
-    return ( 
+    return (
+         <div className="todoDetalle">
     <div className="detail">
-        <div className="img">
-        <img src={perritoID[0].img} alt={perritoID[0].id} /> 
+        <div>
+        <img className="img" src={perritoID[0].img} alt={perritoID[0].id} /> 
         </div>
         <div className="descripcionDetail">
-             <h2>{perritoID[0].name}</h2>
-             <p>Peso <br /> {perritoID[0].peso}</p>
+            <h2>{perritoID[0].name}</h2>
+            <p>Peso <br /> {perritoID[0].peso}</p>
             <p>Altura <br /> {perritoID[0].altura}</p>
             <p>Años de Vida <br /> {perritoID[0].años}</p>
             <p>Temperamentos <br /> {perritoID[0].temperamento}</p> 
-            <Link to={`/dogs`}> 
-                <button className="loginBoton btncardetail ov-btn-grow-skew"> Mas perritos </button>
-            </Link>
         </div>
+    </div>
+            <Link to={`/dogs`}> 
+                <button className="ov-btn-grow-skew btndtl"> Ver otras razas en el Home </button>
+            </Link>
     </div> 
     );
 }

@@ -1,26 +1,34 @@
-/* Estilos para el contenedor de las tarjetas utilizando CSS Grid */
-.card-container {
-    display:grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px; 
-    
-  }
 
-  .pagination{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-   }
+.card-container {
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+    position: relative;
+    top: 8%;
+    border: 5px solid white none;
+  }
 
  .botpag{
   display:flex;
   justify-content:space-around;
+  position: relative;
  }
-
+.filtros{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  cursor: pointer;
+}
 .boton{
   width: 20%;
   height: 30px;
   border-radius: 0px 50px;
   font-size: large;
   margin: 5px;
+  border: pink dotted 3px;
+  font-size: larger;
+  background-color: grey;
+  color: pink;
+  text-shadow: 5px 5px 5px rgb(0, 0, 0);
+  cursor: pointer;
 }

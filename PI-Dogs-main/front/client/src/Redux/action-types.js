@@ -7,6 +7,7 @@ export const API = "API";
 export const DB = "DB";
 export const ALL_TEMPERAMENTS = "ALL_TEMPERAMENTS";
 export const TRAER_TEMPERAMENT = "TRAER_TEMPERAMENT";
+export const SET_CONTER = "SET_CONTER";
 
 
 

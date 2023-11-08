@@ -11,6 +11,11 @@ const initialState = {
   
   const rootReducer = (state = initialState, action) => {
     switch (action.type) {
+      case "SET_CONTER":
+        return{
+          ...state,
+          counter: 1,
+        }
       case 'INCREMENT':
         return {
           ...state,

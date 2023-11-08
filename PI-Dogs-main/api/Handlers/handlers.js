@@ -54,13 +54,11 @@ const getDogsRazaHandler = async(req,res) => {
 };
 
 const postDogsHandler = async(req,res) => {
-    console.log("llegue")
     const {name, img, altura, peso,añosdevida, temperaments } = req.body
     try{
         const cargarBase = await nuevoPerro(name, img, altura, peso,añosdevida, temperaments) 
         res.status(200).json({cargarBase})
     } catch (error) {
-        console.log("llegue")
         res.status(404).json({error:error.message})
         console.log(error.message);
     }

@@ -1,13 +1,21 @@
-.formselect{
-    margin-left: 30%;
-    text-align: center;
+.tempselect{
+    border: none;
+    font-size: large;
     background: none;
-    border: none;
-    font-size: medium;
+    text-align: center;
+    text-shadow: 5px 5px 5px rgb(0, 0, 0);
+    color: pink;
 }
-.formselect::after{
+
+.tempselect::after{
     border: none;
 }
-.formselect:focus{
+.tempselect:before{
     border: none;
+}
+
+.tempselect option{
+    background: gray;
+    color: pink;
+    border-radius: 50%;
 }

@@ -28,6 +28,7 @@ export const increment = () => ({
       }
     };
   };
+  
   export const setTemperaments = () => {
     return async (dispatch) => {
       try {

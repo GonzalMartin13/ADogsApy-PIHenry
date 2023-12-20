@@ -1,6 +1,6 @@
 import { useState, } from "react";
 import { useDispatch } from "react-redux";
-import { traerXraza } from "../../Redux/actions"; 
+import { setConter, traerXraza } from "../../Redux/actions"; 
 import "./searchbar.css"
 
 function Searchbar() {
@@ -10,7 +10,7 @@ function Searchbar() {
         const {value} = event.target;
         setName(value)
         dispatch(traerXraza(value))
-
+        dispatch(setConter())
      }
     return (  
     <div className="busqueda">

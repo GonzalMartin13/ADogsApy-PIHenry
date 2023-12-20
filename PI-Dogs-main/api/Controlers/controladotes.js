@@ -5,6 +5,10 @@ const {API_KEY} = process.env;
 const {CatDog} = require("../Utils/catdog");
 const perroLimpio = require("../Utils/filtroPerros");
 
+const papsControler = () =>{
+    return "Si o no"
+}
+
 // Busqueda todos los perro y por query //
 const allPerritos = async (raza) => {
     //-- Peticiones a la DB y a la API --//
@@ -125,5 +129,6 @@ module.exports = {
     traerPerritoXRaza,
     temperamentsBD,
     nuevoPerro,
-    traerTemps
+    traerTemps,
+    papsControler
 }

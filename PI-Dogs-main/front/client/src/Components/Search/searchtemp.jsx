@@ -1,15 +1,20 @@
 import { useEffect } from "react";
 import "./searchtemp.css";
 import { useDispatch, useSelector } from "react-redux";
-import { setTemperaments, traerPorTemperamento } from "../../Redux/actions";
+import { setConter, setDogs, setTemperaments, traerPorTemperamento } from "../../Redux/actions";
 
 function SearchTemp() {
   const dispatch = useDispatch();
   const allTemps = useSelector((state) => state.temperaments);
 
   const handleSelectChange = (event) => {
+    if (event.target.value !== "Busqueda por Temperamento"){
     dispatch(traerPorTemperamento(event.target.value));
+    dispatch(setConter())
     console.log(event.target.value)
+    } else {
+      dispatch(setDogs());
+    }
   };
 
   useEffect(() => {

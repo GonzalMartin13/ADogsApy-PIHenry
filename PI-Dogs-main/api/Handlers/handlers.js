@@ -1,9 +1,18 @@
 require('dotenv').config();
 const {API_KEY} = process.env;
 const {Dog, Temperament} = require("../src/db")
-const {allPerritos, traerPerritoXRaza, traerTemps, nuevoPerro} = require("../Controlers/controladotes.js")
+const {allPerritos, papsControler, traerPerritoXRaza, traerTemps, nuevoPerro} = require("../Controlers/controladotes.js")
 const axios = require("axios");
 const perroLimpio = require('../Utils/filtroPerros.js');
+
+const getPapsHandler = async(req, res) => {
+    try {
+         const paps = await papsControler()
+         res.status(200).json(paps)
+    } catch (error) {
+        
+    }
+}
 
 const getDogsHandler = async(req,res) => {
     const {name} = req.query;
@@ -42,7 +51,7 @@ const getDogsApiHandler = async(req,res) => {
 
 const getDogsRazaHandler = async(req,res) => {
     const {id} = req.params;
-    console.log(id)
+    console.log(typeof(id))
     const esUUID = isNaN(id) ? "base" : "api"
     console.log(typeof(id), id, esUUID)
     try{
@@ -81,4 +90,5 @@ module.exports = {
     postDogsHandler,
     getTemperamentHandler,
     getDogsBDHandler,
+    getPapsHandler,
     }

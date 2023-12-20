@@ -1,6 +1,6 @@
 import { Routes, Route, useLocation } from "react-router-dom";
 import Login from "./Components/Login/login";
-import Container from "./Components/Cards/Container/container";
+import Container from "./Components/Cards/Container/container.jsx";
 import DetailCard from "./Components/Cards/Detail/detail";
 import Formulario from "./Components/Form/formulario";
 import Nav from "./Components/Nav/nav";

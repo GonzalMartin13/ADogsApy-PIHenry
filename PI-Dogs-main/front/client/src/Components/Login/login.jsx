@@ -12,7 +12,6 @@ function Login() {
     });
 
     useEffect(() => {
-        // Esta función se ejecutará cada vez que 'user' cambie
         dispatch(setUsuario(user));
         console.log(user);
     }, [user]);

@@ -29,10 +29,8 @@ function Formulario() {
   const handleInputChange = (event) => {
     const { name, value } = event.target;
 
-    // Validación para campos de años, peso y altura
     if (['añosdevida', 'añosdevida-max', 'peso', 'peso-max', 'altura', 'altura-max'].includes(name)) {
       if (!/^\d+$/.test(value)) {
-        // Solo se permiten números
         return;
       }
     }
@@ -47,6 +45,9 @@ function Formulario() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    const empiezaConEspacio = perro.name.startsWith(" ");
+    
+    
     if (
       (perro['añosdevida'] !== '' && perro['añosdevida-max'] !== '' && parseInt(perro['añosdevida']) > parseInt(perro['añosdevida-max'])) ||
       (perro['peso'] !== '' && perro['peso-max'] !== '' && parseInt(perro['peso']) > parseInt(perro['peso-max'])) ||
@@ -56,6 +57,9 @@ function Formulario() {
       return;
     } else if(!perro.imagen.includes(".jpg") || !perro.imagen.includes(".com/")){
       alert("Solo es valida una url que contenga una imagen de tipo jpg")
+      return
+    } else if (empiezaConEspacio){
+      alert("El nombre no puede estar vacio")
       return
     }
 
@@ -67,6 +71,7 @@ function Formulario() {
       altura: `${perro.altura} - ${perro['altura-max']}`,
       temperaments: perro.temperaments.join(", "),
     };
+    console.log(formattedPerro      )
 
     axios.post('http://localhost:3001/postdogs/', formattedPerro)
       .then((response) => {
@@ -86,7 +91,6 @@ function Formulario() {
       })
       .catch((error) => {
         console.error("Error al crear el perro:", error);
-        // Manejar errores aquí
       });
   };
 
@@ -120,7 +124,7 @@ function Formulario() {
         <div>
           <label htmlFor="añosdevida">AÑOS DE VIDA <br/> (mínimo - máximo)</label> <br />
           <input
-            type="number"  // Cambio de 'text' a 'number'
+            type="number"  
             id="añosdevida"
             name="añosdevida"
             placeholder="Mínimo"
@@ -129,7 +133,7 @@ function Formulario() {
             required
           />
           <input
-            type="number"  // Cambio de 'text' a 'number'
+            type="number"  
             id="añosdevida-max"
             name="añosdevida-max"
             placeholder="Máximo"
@@ -141,7 +145,7 @@ function Formulario() {
         <div>
           <label htmlFor="peso">PESO <br/> (mínimo - máximo)</label><br />
           <input
-            type="number"  // Cambio de 'text' a 'number'
+            type="number"  
             id="peso"
             name="peso"
             placeholder="Mínimo"
@@ -150,7 +154,7 @@ function Formulario() {
             required
           />
           <input
-            type="number"  // Cambio de 'text' a 'number'
+            type="number"  
             id="peso-max"
             name="peso-max"
             placeholder="Máximo"
@@ -162,7 +166,7 @@ function Formulario() {
         <div>
           <label htmlFor="altura">ALTURA <br/> (mínimo - máximo)</label><br />
           <input
-            type="number"  // Cambio de 'text' a 'number'
+            type="number"  
             id="altura"
             name="altura"
             placeholder="Mínimo"
@@ -171,7 +175,7 @@ function Formulario() {
             required
           />
           <input
-            type="number"  // Cambio de 'text' a 'number'
+            type="number" 
             id="altura-max"
             name="altura-max"
             placeholder="Máximo"
